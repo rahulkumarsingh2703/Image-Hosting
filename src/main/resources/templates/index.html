@@ -1,7 +1,11 @@
 <!Doctype html>
 
 <html xmlns:th="http://thymeleaf.org">
-
+<head th:replace="layout :: site-head"></head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/tachyons.min.css}"/>
+</head>
 <!-- Adding the fragment site-head in layout.html-->
 <head th:replace="layout :: site-head">
 </head>
@@ -10,12 +14,16 @@
 <header th:replace="layout :: logged-out"></header>
 
 <body>
-<h1 style="text-align: center; font-family: Calibri; font-size: x-large">Image Hoster</h1>
-<section class="fl w-50-l w-100 pa3 pa5-ns center">
+<article>
+<div class="vh-5 dt w-100 bg-dark-pink">
+<h1 class="f6 f2-m f-subheadline-l fw6 tc">Image Hoster</h1>
+</div>
+</article>
+
 <main id="images">
     <post th:each="i : ${images}">
         <p>
-        <div >
+        <div>
             <img th:src="'data:image/jpeg;base64,'+${i.imageFile}"/>
         </div>
         <h2 th:text="${i.title}"></h2>
@@ -26,6 +34,6 @@
         </p>
     </post>
 </main>
-    </section>
+
 </body>
 </html>

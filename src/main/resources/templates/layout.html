@@ -10,8 +10,8 @@
 <!-- The logged-out fragment now contains Login as well as Registration-->
 <header th:fragment="logged-out" th:remove="tag">
     <header>
-        <a href="users/login.html" th:href="@{/users/login}">Login</a>
-        <a href="users/registration.html" th:href="@{/users/registration}">Registration</a>
+        <a href="users/login.html" th:href="@{/users/login}" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-blue">Login</a>
+        <a href="users/registration.html" th:href="@{/users/registration}" class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-blue">Registration</a>
     </header>
 </header>
 
